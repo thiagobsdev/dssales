@@ -1,0 +1,7 @@
+.main-header-container {
+  height: 80px;
+  padding-left: 55px;
+ display: flex;
+ align-items: center;
+ background-color: var(--primary-color);
+}
