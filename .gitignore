@@ -1,0 +1,101 @@
+# Node.js
+node_modules/
+
+# React
+/build/
+/dist/
+/.cache/
+
+# TypeScript
+*.tsbuildinfo
+*.ts~
+
+# Spring Boot
+/target/
+/build/
+/bin/
+/logs/
+/release/
+
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Maven
+log/
+target/
+.idea_modules/
+
+# Gradle
+.gradle/
+build/
+
+# Compiled class file
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/nbactions.xml
+/nb-configuration.xml
+/nb-configuration.xml.orig
+*.html
+*.nbattrs
+META-INF/
+/build/
+
+# BlueJ
+.bluej/
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
