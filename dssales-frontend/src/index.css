@@ -7,6 +7,8 @@
   --light-color: #E9E9E9;
   --gray-light-color: #9AAABE;
   --border-gray: #384459;
+  --gray-font-color: #949494;
+  --green-font-color: #08b976;
 }
 body{
   margin: 0;
