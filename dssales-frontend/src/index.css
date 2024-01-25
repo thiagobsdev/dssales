@@ -9,6 +9,8 @@
   --border-gray: #384459;
   --gray-font-color: #949494;
   --green-font-color: #08b976;
+  --white-font-color: #FFFFFF;
+  --label-font-color: #72849A;
 }
 body{
   margin: 0;

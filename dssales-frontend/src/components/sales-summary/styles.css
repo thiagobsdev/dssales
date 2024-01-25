@@ -1,0 +1,47 @@
+.sales-summary-container {
+  width: 440px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sales-summary-card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sales-summary-card-icon {
+  margin-bottom: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+
+}
+
+.sales-summary-card-value {
+  color: var(--white-font-color);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.sales-summary-card-label {
+  color: var(--label-font-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+.sales-summary-card:nth-of-type(1),.sales-summary-card:nth-of-type(2) {
+    margin-bottom: 45px;
+}
