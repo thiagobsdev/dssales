@@ -11,6 +11,8 @@
   --green-font-color: #08b976;
   --white-font-color: #FFFFFF;
   --label-font-color: #72849A;
+  --title-table-color: #E9E9E9;
+  --border-table-color: #72849A;
 }
 body{
   margin: 0;
