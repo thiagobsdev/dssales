@@ -52,7 +52,7 @@ function onChangeFilterData( filterChangeData : FilterData) {
           <PieChartCard name='Lojas' labels={salesStore?.labels} series={salesStore?.series} />
           <PieChartCard name='Pagamentos' labels={salesPayment?.labels} series={salesPayment?.series} />
         </div>
-        <SalesTable />
+        <SalesTable filterDates={filterData}/>
       </div>
     </>
   )

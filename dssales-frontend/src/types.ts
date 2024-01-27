@@ -13,6 +13,7 @@ export type GenderType = 'MALE' | 'FEMALE' | 'OTHER';
 export type FilterData ={
   dates?: Date[];
   gender?: GenderType
+  extraParams?: Record<string, unknown>
 }
 
 export type SalesSummaryData = {
@@ -33,7 +34,24 @@ export type SalesPaymentDataType =  {
   sum: number
 }
 
+export type SalesReponse =  {
+  content: SalesPageDataType[]
+}
+
+export type SalesPageDataType =  {
+  id: number,
+  date: string,
+  volume: number,
+  total: number,
+  gender: GenderType,
+  categoryName: string,
+  paymentMethod: string,
+  storeName: string
+}
+
 export type PieChartConfigType = {
     labels: string[];
     series: number[];
 }
+
+

@@ -1,6 +1,35 @@
+import { useEffect, useMemo, useState } from "react";
+import { FilterData, SalesPageDataType, SalesReponse } from "../../types";
+import { buildFiltersParams, makeRequest } from "../../utils/requests";
 import "./styles.css"
+import { formatDate, formatGender, formatPrice } from "../../utils/formatters";
 
-function SalesTable() {
+type Props = {
+  filterDates?: FilterData;
+}
+
+const extraParams = {
+  page: 0,
+  size: 12,
+  sort: 'date,desc'
+}
+
+function SalesTable({filterDates}: Props) {
+
+  const params = useMemo( ()=> buildFiltersParams(filterDates, extraParams),[filterDates])
+
+  const [ tableData, setTableData] = useState<SalesPageDataType[]>([]) ;
+
+  useEffect( () => {
+    makeRequest.get<SalesReponse>("/sales", {params})
+        .then( (response) => {
+            const newSeriesChartData = response.data.content
+            setTableData(newSeriesChartData);
+
+        })
+},[params] )
+
+
   return (
     <div className="sales-table-container base-card">
         <h3 className="sales-table-title" >Vendas recentes</h3>
@@ -17,51 +46,21 @@ function SalesTable() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>#341</td>
-              <td>07/11/2017</td>
-              <td>Masculino</td>
-              <td>Roupas e acessórios	</td>
-              <td>Uberlândia</td>
-              <td>Crédito</td>
-              <td>R$ 450,000.00</td>
-            </tr>
-            <tr>
-              <td>#341</td>
-              <td>07/11/2017</td>
-              <td>Masculino</td>
-              <td>Roupas e acessórios	</td>
-              <td>Uberlândia</td>
-              <td>Crédito</td>
-              <td>R$ 450,000.00</td>
-            </tr>
-            <tr>
-              <td>#341</td>
-              <td>07/11/2017</td>
-              <td>Masculino</td>
-              <td>Roupas e acessórios	</td>
-              <td>Uberlândia</td>
-              <td>Crédito</td>
-              <td>R$ 450,000.00</td>
-            </tr>
-            <tr>
-              <td>#341</td>
-              <td>07/11/2017</td>
-              <td>Masculino</td>
-              <td>Roupas e acessórios	</td>
-              <td>Uberlândia</td>
-              <td>Crédito</td>
-              <td>R$ 450,000.00</td>
-            </tr>
-            <tr>
-              <td>#341</td>
-              <td>07/11/2017</td>
-              <td>Masculino</td>
-              <td>Roupas e acessórios	</td>
-              <td>Uberlândia</td>
-              <td>Crédito</td>
-              <td>R$ 450,000.00</td>
-            </tr>
+            { tableData.length > 0 &&
+              tableData.map( (x) => {
+                return (
+                  <tr key={x.id}>
+                  <td>{`# ${x.id}`}</td>
+                  <td>{formatDate(x.date)}</td>
+                  <td>{formatGender(x.gender)}</td>
+                  <td>{x.categoryName}	</td>
+                  <td>{x.storeName}</td>
+                  <td>{x.paymentMethod}</td>
+                  <td>{formatPrice(x.total)}</td>
+                </tr>
+                )
+              })
+            }
           </tbody>
         </table>
     </div>

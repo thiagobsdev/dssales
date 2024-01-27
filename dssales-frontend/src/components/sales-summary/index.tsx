@@ -14,7 +14,6 @@ type Props = {
   filterDates?: FilterData;
 }
 
-
 function SalesSummary({filterDates}: Props) {
 
   const [ salesSummary, setSalesSummary] = useState<SalesSummaryData>() ;
