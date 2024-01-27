@@ -4,7 +4,7 @@ import "./styles.css"
 
 type Props = {
   icon: string,
-  value: number,
+  value: number | string,
   label: string
 }
 
